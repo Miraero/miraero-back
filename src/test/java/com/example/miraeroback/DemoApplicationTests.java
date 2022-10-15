@@ -1,10 +1,10 @@
-package test.java.com.example.miraero;
+package com.example.miraeroback;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class MiraeroApplicationTests {
+class DemoApplicationTests {
 
 	@Test
 	void contextLoads() {

@@ -1,13 +1,13 @@
-package main.java.com.example.miraero;
+package main.java.com.example.miraeroback;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class MiraeroApplication {
+public class DemoApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(MiraeroApplication.class, args);
+		SpringApplication.run(DemoApplication.class, args);
 	}
 
 }
