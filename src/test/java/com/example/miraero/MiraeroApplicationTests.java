@@ -1,4 +1,4 @@
-package com.example.miraero;
+package test.java.com.example.miraero;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
