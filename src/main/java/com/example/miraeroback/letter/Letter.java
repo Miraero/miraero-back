@@ -1,5 +1,6 @@
 package com.example.miraeroback.letter;
 
+import com.example.miraeroback.user.User;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
@@ -27,5 +28,9 @@ public class Letter {
 
     @Column(name = "RECEIVE_DATE")
     private LocalDateTime receiveDate;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "USER_ID")
+    private User user;
 
 }
