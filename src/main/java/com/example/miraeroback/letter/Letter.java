@@ -1,5 +1,6 @@
 package com.example.miraeroback.letter;
 
+import com.example.miraeroback.letter.auditing.LetterBaseEntity;
 import com.example.miraeroback.user.User;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -14,7 +15,7 @@ import java.time.LocalDateTime;
 @Entity
 @NoArgsConstructor
 @AllArgsConstructor
-public class Letter {
+public class Letter extends LetterBaseEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -33,4 +34,10 @@ public class Letter {
     @JoinColumn(name = "USER_ID")
     private User user;
 
+    @Column(name = "LAST_READ_DATE")
+    private LocalDateTime lastReadDate;
+
+    public void updateReadDate(){
+        this.lastReadDate = LocalDateTime.now();
+    }
 }
