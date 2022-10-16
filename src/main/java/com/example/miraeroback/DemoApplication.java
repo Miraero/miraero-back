@@ -1,4 +1,4 @@
-package main.java.com.example.miraeroback;
+package com.example.miraeroback;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
