@@ -12,4 +12,6 @@ public class LetterOfGet {
     private String title;
     private String content;
     private LocalDateTime receiveDate;
+    private LocalDateTime createdAt;
+    private LocalDateTime lastReadDate = null;
 }

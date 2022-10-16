@@ -39,4 +39,11 @@ public class UserServiceImpl implements UserService{
 
         return memberEntity;
     }
+
+    @Override
+    public User getUserEntity(Long userId) {
+
+        return userRepository.findById(userId)
+                .orElseThrow(() -> new RuntimeException("유저 정보가 없어요~"));
+    }
 }
