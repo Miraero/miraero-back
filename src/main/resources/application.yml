@@ -10,9 +10,9 @@ server:
 spring:
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://localhost:3306/catch_bug?serverTimezone=UTC&characterEncoding=UTF-8
-    username: user01
-    password: user01
+    url: jdbc:mysql://miraero.mysql.database.azure.com/mirae?serverTimezone=UTC&characterEncoding=UTF-8
+    username: miraero
+    password: Alfofh!1234
 
   jpa:
     hibernate:
