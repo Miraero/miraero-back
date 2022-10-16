@@ -34,4 +34,10 @@ public class LetterController {
         return new ResponseEntity<>(HttpStatus.OK);
     }
 
+
+    @GetMapping("/test")
+    public String abc(){
+        return "goood";
+    }
+
 }
