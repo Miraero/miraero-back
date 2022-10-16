@@ -8,4 +8,6 @@ public interface UserService {
 
     boolean isFirstLogin(Long kakaoId);
     User login(DtoOfUserProfile dtoOfUserProfile);
+
+    User getUserEntity(Long userId);
 }
