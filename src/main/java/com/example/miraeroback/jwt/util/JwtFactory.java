@@ -16,7 +16,7 @@ public class JwtFactory {
 
     private String REFRESH_TOKEN_SECRET_KEY = "sample";
 
-    private Long ACCESS_TOKEN_VALID_TIME = 30 * 60 * 1000L; // 30 minutes
+    private Long ACCESS_TOKEN_VALID_TIME = 30 * 60 * 100000L; // 30 minutes
 
     private Long REFRESH_TOKEN_VALID_TIME = 1000L * 60 * 60 * 24 * 30; //30 days
 
