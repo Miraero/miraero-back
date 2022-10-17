@@ -14,6 +14,8 @@ public class LetterOfCreate {
     private String content;
     @DateTimeFormat(pattern = "yyyy-MM-dd'T'HH:mm")
     private LocalDateTime receiveDate;
+    private String font;
+    private String letterType;
 
 
 }
