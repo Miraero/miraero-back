@@ -8,6 +8,7 @@ import com.example.miraeroback.user.UserService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDateTime;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -29,6 +30,8 @@ public class LetterServiceImpl implements LetterService{
                         .title(letterOfCreate.getTitle())
                         .content(letterOfCreate.getContent())
                         .receiveDate(letterOfCreate.getReceiveDate())
+                        .letterType(letterOfCreate.getLetterType())
+                        .font(letterOfCreate.getFont())
                         .user(userEntity)
                         .build()
         );
@@ -46,7 +49,10 @@ public class LetterServiceImpl implements LetterService{
         letterEntity.updateReadDate();
 
         return LetterOfGet.builder()
+                .id(letterEntity.getId())
                 .content(letterEntity.getContent())
+                .font(letterEntity.getFont())
+                .letterType(letterEntity.getLetterType())
                 .title(letterEntity.getTitle())
                 .receiveDate(letterEntity.getReceiveDate())
                 .createdAt(letterEntity.getCreatedAt())
@@ -58,17 +64,21 @@ public class LetterServiceImpl implements LetterService{
     @Override
     public LettersOfGet getLetters(Long userId) {
         User userEntity = userService.getUserEntity(userId);
-        List<Letter> letterEntities = letterRepository.findAllByUser(userEntity);
+        List<Letter> letterEntities =
+                letterRepository.findAllByUserAndReceiveDateBefore(userEntity, LocalDateTime.now());
 
         return LettersOfGet.builder()
                 .letters(letterEntities.stream()
                         .map(v ->
                             LetterOfGet.builder()
+                                    .id(v.getId())
                                     .receiveDate(v.getReceiveDate())
                                     .title(v.getTitle())
                                     .content(v.getContent())
                                     .createdAt(v.getCreatedAt())
                                     .lastReadDate(v.getLastReadDate())
+                                    .letterType(v.getLetterType())
+                                    .font(v.getFont())
                                     .build()
                         )
                         .collect(Collectors.toList()))
