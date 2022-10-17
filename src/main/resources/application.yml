@@ -10,7 +10,7 @@ server:
 spring:
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://miraero.mysql.database.azure.com/mirae?serverTimezone=UTC&characterEncoding=UTF-8
+    url: jdbc:mysql://miraero.mysql.database.azure.com:3306/mirae?serverTimezone=UTC&characterEncoding=UTF-8
     username: miraero
     password: Alfofh!1234
     
