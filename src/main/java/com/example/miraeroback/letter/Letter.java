@@ -37,6 +37,12 @@ public class Letter extends LetterBaseEntity {
     @Column(name = "LAST_READ_DATE")
     private LocalDateTime lastReadDate;
 
+    @Column(name = "FONT")
+    private String font;
+
+    @Column(name = "LETTER_TYPE")
+    private String letterType;
+
     public void updateReadDate(){
         this.lastReadDate = LocalDateTime.now();
     }
